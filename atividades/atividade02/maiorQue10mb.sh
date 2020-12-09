@@ -1,5 +1,5 @@
 mkdir maiorque10
-find pasta_arquivos/ -size +10000k -exec cp {} maiorque10/ \;
+find pasta_arquivos/ -size +10000k -exec mv {} maiorque10/ \;
 tar -czf maiorque10.tar.gz maiorque10/
 rm -r maiorque10
 
