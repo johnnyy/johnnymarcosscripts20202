@@ -1,4 +1,5 @@
 revistas?
 [L|l][e|E][T|t][R|r][A|a]
 \-?\b[0-9]+\b[^A-Za-z[:punct:]]
+# Poderia ter elaborado mais. 4000.4000.4000.4000 é IP?
  [0-9]+\.[0-9]+\.[0-9]+\.[0-9]+ 
