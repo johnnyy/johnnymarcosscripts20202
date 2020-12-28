@@ -1,3 +1,4 @@
+# Correção: 1,0
 grep -v "sshd" auth.log.1
 grep -E "sshd\[[0-9]*\]: pam_unix\(sshd:session\): session opened" auth.log.1
 grep -E "sshd\[[0-9]*\]: Disconnected from authenticating user root" auth.log.1
