@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Correção: OK
 
 touch validos.txt
 touch invalidos.txt
