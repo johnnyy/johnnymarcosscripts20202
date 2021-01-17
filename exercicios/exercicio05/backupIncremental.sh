@@ -1,4 +1,5 @@
 #!/bin/bash
+# Correção OK
 
 for file in $( ls $1 )
 do
