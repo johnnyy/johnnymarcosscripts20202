@@ -3,7 +3,6 @@
 
 date_time="$3 $4"
 
-echo "${date_time}"
 datetime_sec=$(date -d "${date_time}" +%s)
 
 
