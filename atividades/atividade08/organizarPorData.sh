@@ -1,4 +1,5 @@
 #!/bin/bash
+# Correção: 1,0
 
 for file in $( ls $1 )
 do
