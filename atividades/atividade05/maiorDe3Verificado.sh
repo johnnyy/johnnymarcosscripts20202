@@ -1,4 +1,5 @@
 #!/bin/bash
+# Correção: 1,0
 
 number1=$1
 number2=$2

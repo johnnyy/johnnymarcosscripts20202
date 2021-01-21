@@ -1,4 +1,5 @@
 #!/bin/bash
+# Correção: 1,0
 dire=$1
 
 if [ -d ${dire} ] 
