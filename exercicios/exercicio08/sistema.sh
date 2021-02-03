@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Correção: 1,0
 trap "clear; echo 'Valeu, até a próxima!'; exit" 2
 
 func_1(){
