@@ -62,7 +62,7 @@ listar(){
 
 buscar(){
 	hostname=$1
-	grep -e "^$hostname:" hosts.db | sed -s "s/:/    /g" 
+	grep -e "^$hostname:" hosts.db | sed -s "s/^.*://g" 
 }
 
 #-------escolha do método
