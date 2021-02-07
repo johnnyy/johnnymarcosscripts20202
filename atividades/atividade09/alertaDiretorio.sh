@@ -1,4 +1,7 @@
 #!/bin/bash
+# Correção: 2,0. Até funciona, mas exibe informações mesmo quando não ocorrem eventos de alteração.
+# Quando é para exibir os detalhes do evento de adição ou remoção, a saída está confusa.
+# A ordem dos parâmetros está inversa.
 
 dir_verified=$1
 time_=$2
