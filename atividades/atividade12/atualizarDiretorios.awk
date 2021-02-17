@@ -1,3 +1,3 @@
 BEGIN{}
-	 gsub("/home/alunos","/home/students")1 { print $0  > "passwd.new" }
+	 gsub("/home/alunos","/srv/students")1 { print $0  > "passwd.new" }
 END{}
