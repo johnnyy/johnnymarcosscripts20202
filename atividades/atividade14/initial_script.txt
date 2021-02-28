@@ -1,0 +1,5 @@
+#!/bin/bash
+sudo apt-get update -y
+sudo apt-get install -y apache2
+sudo chmod -R 777 /var/www
+sudo echo "<html><head> <title>Bem vindo João Marcelo</title></head><body><h1>Johnny Marcos - 385161</h1></body></html>" > /var/www/html/index.html
