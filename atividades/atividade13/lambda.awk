@@ -1,3 +1,4 @@
+# OK
 BEGIN{
 	print "Relatório da execução do lambda"
 }
