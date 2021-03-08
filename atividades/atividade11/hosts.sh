@@ -1,4 +1,5 @@
 #!/bin/bash
+#OK
 
 host="void"
 acao="void"
