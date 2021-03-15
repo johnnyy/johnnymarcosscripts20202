@@ -1,0 +1,70 @@
+#!/bin/bash
+
+sudo echo "#!/bin/bash
+
+DATA=\$(date +%H:%M:%S-%D)
+UPTIME=\$(uptime -p)
+MEM_USED=\$(echo \"\$(free -m)\" | grep \"Mem\" | awk '{ print \$3}')
+MEM_FREE=\$(echo \"\$(free -m)\" | grep \"Mem\" | awk '{ print \$4}')
+PROCE_=\$(mpstat | awk '{ if (NR != 1 && NR != 2){ printf \"%s %s %s %s %s %s\n\", \$2, \$3, \$4, \$5, \$6, \$12 } }')
+Bytes=\$(cat /proc/net/dev | grep eth0: | awk '{printf \"Receive: %s bytes\nTransimit:%s bytes\", \$2, \$10 }')
+
+PROCE_=\$(echo \${PROCE_} | sed -s \"s/idle/idle<br\/>/g\")
+
+
+cat << EOF > /var/www/html/index.html
+<html>
+<head>
+	<title> Monitoramento </title>
+	<meta http-equiv=\"refresh\" content=\"5\" >
+</head>
+<body>
+<table border=\"1\">
+    <tr>
+	<td>Informacoes</td>
+	<td>Valores</td>
+    </tr>
+    <tr>
+	<td>Horario da Medição</td>
+	<td>\${DATA}</td>
+    </tr>
+    <tr>
+	<td>Tempo Ativo</td>
+	<td>\${UPTIME}</td>
+    </tr>
+    <tr>
+	<td>Carga media</td>
+	<td>\${PROCE_}</td>
+    </tr>
+    <tr>
+	<td>Quantidade de memoria livre</td>
+	<td>\${MEM_FREE}</td>
+    </tr>
+    <tr>
+	<td>Quantidade de memoria usada</td>
+	<td>\${MEM_USED}</td>
+    </tr>
+     <tr>
+	<td>Quantidade de bytes na interface eth0</td>
+	<td>\$(echo \${Bytes} |sed -s 's/\\n/<\/br>/') </td>
+    </tr>
+</table>
+</body>
+</html>
+
+EOF
+
+" > /usr/local/bin/monitoramento.sh
+
+sudo chmod 744 /usr/local/bin/monitoramento.sh
+
+
+sudo echo "*/1 *  * * * ubuntu /usr/local/bin/monitoramento.sh" >> /etc/crontab 
+
+
+
+sudo apt-get update -y
+sudo apt install -y sysstat
+sudo apt-get install -y apache2
+sudo chmod -R 777 /var/www
+
