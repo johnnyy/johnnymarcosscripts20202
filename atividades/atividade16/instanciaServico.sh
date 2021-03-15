@@ -16,8 +16,6 @@ do
 
 	sleep 5
 
-	
-
 done
 
 IP_INSTANCE=$(aws ec2 describe-instances --filter Name=instance-id,Values=${ID_INSTANCE} --query "Reservations[0].Instances[0].NetworkInterfaces[0].Association.PublicIp" --output text)

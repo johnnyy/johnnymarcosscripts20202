@@ -59,7 +59,7 @@ EOF
 sudo chmod 744 /usr/local/bin/monitoramento.sh
 
 
-sudo echo "*/1 *  * * * ubuntu /usr/local/bin/monitoramento.sh" >> /etc/crontab 
+sudo echo "*/1 *   * * *    root    /usr/local/bin/monitoramento.sh" >> /etc/crontab 
 
 
 
