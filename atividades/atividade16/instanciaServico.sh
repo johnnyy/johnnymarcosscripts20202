@@ -1,4 +1,5 @@
 #!/bin/bash
+# Correção: 1,0
 echo "Criando servidor de Monitoramento em CRON..."
 key_name=$1
 AMI_SO="ami-03d315ad33b9d49c4"
