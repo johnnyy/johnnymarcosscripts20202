@@ -1,0 +1,14 @@
+#!/bin/bash
+
+sudo apt-get update -y
+sudo apt-get install -y mysql-server
+
+sed -i 's/127.0.0.1/0.0.0.0/' /etc/mysql/mysql.conf.d/mysqld.cnf
+
+systemctl restart mysql.service 
+
+mysql<<EOF
+CREATE DATABASE atv18;
+CREATE USER 'johnny'@'%' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON atv18.* TO 'johnny'@'%';
+EOF
