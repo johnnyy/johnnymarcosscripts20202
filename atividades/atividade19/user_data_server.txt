@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Correção: 2,5
 sudo apt-get update -y
 
 apt-get install -y apache2 php-mysql php-curl libapache2-mod-php php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip mysql-client

@@ -24,9 +24,9 @@ systemctl restart apache2
 
 
 BD=atv18
-USER=johnny
-PASSWORD=1234
-HOST=172.31.13.161
+USER=alunoufc
+PASSWORD=123scripts456
+HOST=172.31.30.50
 
 cat<<EOF > wp-config.php
 <?php

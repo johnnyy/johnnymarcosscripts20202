@@ -9,6 +9,6 @@ systemctl restart mysql.service
 
 mysql<<EOF
 CREATE DATABASE atv18;
-CREATE USER 'johnny'@'%' IDENTIFIED BY '1234';
-GRANT ALL PRIVILEGES ON atv18.* TO 'johnny'@'%';
+CREATE USER 'alunoufc'@'%' IDENTIFIED BY '123scripts456';
+GRANT ALL PRIVILEGES ON atv18.* TO 'alunoufc'@'%';
 EOF
